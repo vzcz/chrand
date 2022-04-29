@@ -3,7 +3,9 @@ import random
 import time
 import os
 import requests
+
 Token = os.environ["DISCORD_BOT_TOKEN"]
+api_token = os.environ["IMAGE_API_TOKEN"]
 
 client = discord.Client()
 
@@ -52,18 +54,20 @@ async def on_message(message):
     #wallpaper
 
 
-    imageGen = message.content[7:].replace(" ", "%20")
     if userList[0].lower() == '!image':
+        imageGen = message.content[7:].replace(" ", "%20")
         api_url = f'https://api.pexels.com/v1/search?query={imageGen}&per_page=5&page=1'
         print(imageGen)
-        headers = {'Content-Type': 'application/json'}
+        header = {'Content-Type': 'application/json',
+                  'Authorization': api_token}
 
-        response = requests.get(api_url)
+        response = requests.get(api_url, headers=header)
 
         jsontest = response.json()
+        print(jsontest)
 
-    for i in range(4):
-        await message.channel.send(jsontest['photos'][i]['src']['large'])
+        for i in range(4):
+            await message.channel.send(jsontest['photos'][i]['src']['large'])
 
 
 
