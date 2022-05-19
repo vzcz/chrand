@@ -1,16 +1,18 @@
 #Discord bot
 ===================================
 
-    >random <select1> <select2> <select3>
 Random selection
-===================================
+==================
+    >random <select1> <select2> <select3>
 
-    >image <number of images> <image name>
+
 Number of images optional (default 5 image)
-===================================
-
-    >proxy <type>
+==================
+    >image <number of images> <image name>
+    
 Generate free proxy
+==================
+    >proxy <type>
 types:
 http
 socks4
