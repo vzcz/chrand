@@ -34,7 +34,7 @@ types:
 
 Example: 
 ```    
->proxy http
+    >proxy http
 ```
 
 
