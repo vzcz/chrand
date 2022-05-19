@@ -4,8 +4,9 @@
 </div>
 
 ## Usage/Examples
-
+```
     >Help
+```    
  Random selection  
 ```
     >random <select> <select> <select> <select>
